@@ -1,10 +1,6 @@
 <script setup>
 import { reactive, watch } from 'vue'
 
-import Card from 'primevue/card'
-import InputText from 'primevue/inputtext'
-import Button from 'primevue/button'
-
 const props = defineProps({
   modelValue: Object,
   isEditing: Boolean
@@ -24,24 +20,24 @@ const submitForm = () => {
 </script>
 
 <template>
-  <Card class="mb-4">
+  <Card-pv class="mb-4">
     <template #title>
       {{ isEditing ? 'Editar usuario' : 'Nuevo usuario' }}
     </template>
 
     <template #content>
       <div class="p-fluid flex flex-col gap-3">
-        <InputText v-model="form.name" placeholder="Nombre" />
-        <InputText v-model="form.username" placeholder="Username" />
-        <InputText v-model="form.email" placeholder="Email" />
-        <InputText v-model="form.phone" placeholder="Teléfono" />
+        <InputText-pv v-model="form.name" placeholder="Nombre" />
+        <InputText-pv v-model="form.username" placeholder="Username" />
+        <InputText-pv v-model="form.email" placeholder="Email" />
+        <InputText-pv v-model="form.phone" placeholder="Teléfono" />
 
-        <Button
+        <Button-pv
           :label="isEditing ? 'Guardar cambios' : 'Agregar'"
           class="mt-2"
           @click="submitForm"
         />
       </div>
     </template>
-  </Card>
+  </Card-pv>
 </template>

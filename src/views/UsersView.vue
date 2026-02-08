@@ -4,8 +4,9 @@
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
-import UserFormPv from '@/components/UserForm.vue'
+
 import UserTablePv from '@/components/UserTable.vue'
+import UserFormPv from '@/components/UserForm.vue'
 
 const users = ref([])
 const loading = ref(false)
@@ -62,13 +63,13 @@ onMounted(fetchUsers)
 
   <div class="p-4">
 
-    <user-form-pv
+    <UserFormPv
       :model-value="form"
       :is-editing="isEditing"
       @submit="saveUser"
     />
 
-    <user-table-pv
+    <UserTablePv
       :users="users"
       :loading="loading"
       @edit="editUser"
