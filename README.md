@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # PruebaTecnica-MYPER-Software
 
 Aplicacion web CRUD de usuarios construida con Vue 3 + Vite y componentes de PrimeVue. La lista inicial se obtiene desde la API publica de JSONPlaceholder y las operaciones de crear, editar y eliminar se realizan en memoria (sin persistencia en servidor).
@@ -83,6 +83,4 @@ npm run build
 ## Autor
 
 - Andy Mio
-=======
-# PruebaTecnica-MYPER-Software
->>>>>>> 1694f461e01224fad32b946038126be00320d1f9
+
