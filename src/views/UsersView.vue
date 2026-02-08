@@ -23,6 +23,9 @@ const form = ref({
 
   const fetchUsers = async () => {
     loading.value = true
+
+    await new Promise(resolve => setTimeout(resolve, 1000))
+
     try {
       const { data } = await axios.get('https://jsonplaceholder.typicode.com/users')
       users.value = data
@@ -52,6 +55,9 @@ const editUser = (user) => {
 }
 
 const deleteUser = (id) => {
+  const confirmDelete = confirm('¿Seguro de que deseas eliminar este usuario?')
+  if (!confirmDelete) return
+
   users.value = users.value.filter(u => u.id !== id)
 }
 
@@ -60,6 +66,8 @@ onMounted(fetchUsers)
 </script>
 
 <template>
+
+  <div v-if="loading" class="loading p-4">Cargando Usuarios...</div>
 
   <div class="p-4">
 
